@@ -1,0 +1,75 @@
+<html > 
+    <head> 
+            <meta charset='utf-8'>
+            <title>Tiêu đê trang</title> 
+            <style type=""text/css">
+            a:link{
+                color:blue;
+            }
+            a:visited{
+                color:red;
+                font-style: italic;
+            }
+            a:hover{
+                color:purple;
+                font-weight: bold;
+            }
+            /*nhấn vào ko nhả, nếu trong trang có nhiều thẻ mà chỉ muốn 1 cái thì sử dụng id*/ 
+            a#myfaculty:active{                                          
+                color:green;
+            }
+            tbody tr:nth-child(odd){ /*2n+1*/
+                background-color: lightgray;
+            }
+            tbody tr:nth-child(even){ /*2n*/
+                background-color: pink;
+            }
+            </style>
+    </head>
+    <body>
+        <h3>
+            Faculty of Information Systems
+        </h3>
+        <a id="myfaculty" href="https://is.uel.edu.vn">Visit our website</a>
+        <h3>
+            <a href="https://uel.edu.vn">uel.edu.vn</a>
+        </h3>
+        <table border="1">
+            <caption>List of Products</caption>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <th>Product A</th>
+                    <th>$10</th>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <th>Product B</th>
+                    <th>$20</th>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <th>Product C</th>
+                    <th>$30</th>
+                </tr>
+                <tr>
+                    <th>4</th>
+                    <th>Product D</th>
+                    <th>$40</th>
+                </tr>
+                <tr>
+                    <th>5</th>
+                    <th>Product E</th>
+                    <th>$50</th>
+                </tr>
+            </tbody>
+        </table>
+    </body> 
+</html>

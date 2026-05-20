@@ -1,0 +1,229 @@
+<html>
+    <head>
+        <title>Mount Rainier News</title>
+        <style>
+            body {
+                font-family: "Times New Roman", Times, serif;
+                background-color: #f0f0f0;
+                margin: 10px;
+                padding: 0;
+            }
+
+            .wrapper {
+                max-width: 1000px;
+                margin: 0 auto;
+                background-color: #ffc47d; 
+                border: 2px solid #000;
+                padding: 15px;
+            }
+
+            header {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .logo-area {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-text {
+                font-size: 28px;
+                font-weight: bold;
+                font-style: italic;
+                color: #000;
+            }
+
+            .weather-ticker {
+                background-color: #fbf5be; 
+                border: 3px double #999999; 
+                padding: 8px 0;
+                margin-top: 15px;
+                font-size: 14px;
+                text-align: center;
+            }
+
+            .weather-ticker a {
+                color: #0000ee; 
+                text-decoration: underline;
+                font-weight: normal;
+                font-size: 16px;
+            }
+            .main-container {
+                display: flex;
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .content-column {
+                flex: 3;
+            }
+
+            .sidebar-column {
+                flex: 1;
+                background-color: #66ffb3; 
+                border: 1px solid #999;
+                padding: 10px;
+                font-size: 13px;
+            }
+
+            .article {
+                margin-bottom: 25px;
+                overflow: hidden; 
+            }
+
+            .article h2 {
+                color: #b300b3; 
+                font-size: 22px;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .article p {
+                font-size: 15px;
+                line-height: 1.4;
+                margin: 0 0 10px 0;
+                text-align: justify;
+            }
+
+            .img-right {
+                float: right;
+                margin-left: 15px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-size: 11px;
+                max-width: 50%;
+            }
+
+            .img-left {
+                float: left;
+                margin-right: 15px;
+                margin-bottom: 5px;
+                text-align: center;
+                max-width: 40%;
+            }
+
+            .img-right img, .img-left img {
+                border: 2px solid #000;
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+
+            .sidebar-column h2 {
+                color: #b300b3;
+                font-size: 16px;
+                margin: 0 0 10px 0;
+            }
+
+            .sidebar-column h3 {
+                color: #b300b3;
+                margin: 15px 0 5px 0;
+                font-size: 14px;
+                border-bottom: 1px dashed #666;
+    padding-bottom: 2px;
+            }        
+            .sidebar-column h3.first-title {
+                margin-top: 0;
+            }
+
+            .sidebar-column ul {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0 0 15px 0;
+            }
+
+            .sidebar-column ul li {
+                margin-bottom: 3px;
+            }
+
+            .sidebar-column ul li a {
+                color: blue;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="wrapper">
+        
+        <header>
+            <div class="logo-area">
+                <img src="images/Logo.gif" alt="Mount Rainier Graphic" style="border:none; background:none;">
+            </div>
+            
+            <div class="weather-ticker">
+                <a href="#">CLICK TO NEW TODAY'S WEATHER FORECAST</a><br>
+                <strong>Today.. party sunny</strong><br>
+                Tonight...party cloudy. Shower with snow level lowering to 4000
+            </div>
+        </header>
+
+        <div class="main-container">
+            
+            <main class="content-column">
+                
+                <article class="article">
+                    <h2>Autumn Folk Festival</h2>
+                    
+                    <div class="img-right">
+                        <img src="images/Singers.jpg" alt="Folk Singers">
+                        <i>Folk singers, Joan Adams and Shannon Davis</i>
+                    </div>
+
+                    <p>From September 10th - 12th, come to Sunrise for the annual autumn folk festival. The Sunrise Festival is quickly becoming one of the Northwest's top folk events, with its intimate performances from world-famous troubadours. Camping spots are still available at Sunrise campground, but they're going fast.</p>
+                    
+                    <p>In addition to the intimate song sharing in the campground every evening during the festival, there'll be workshops, great food and craft vendors. Call Maria Thompson at 555-9011 for camping information. Call Ted Cashman (555-8122) to sign up for one of the workshops.</p>
+                </article>
+
+                <hr style="border: 0; border-top: 1px dashed #333; margin: 20px 0;">
+
+                <article class="article">
+                    <div class="img-left">
+                        <img src="images/MRIM.jpg" alt="MRIM Map">
+                    </div>
+
+                    <h2>Visitors Prepare to Meet MRIM</h2>
+                    <p>Want to see what it's like to hover over Columbia Crest at 14,400 feet, or ski down the Ingraham Glacier without fear of falling? Then visit MRIM, the Mount Rainier Interactive Map now available at the Paradise visitors' center.</p>
+                    
+                    <p>MRIM uses state-of-the-art computer animation combined with data from geological satellites to help you explore places you might never visit on foot. The results of your journey are displayed on a large screen monitor - perfect for group presentations or individual explorations. Contact Doug LeCourt at Paradise for more information.</p>
+                </article>
+
+            </main>
+    <aside class="sidebar-column">
+                <h2>Other Web Pages</h2>
+                <h3>About Mount Rainier</h3>
+                <ul>
+                    <li><a href="#">Mt. Rainier Natn'l Park</a></li>
+                    <li><a href="#">Mt. Rainier Associates</a></li>
+                    <li><a href="#">Visitor Centers</a></li>
+                    <li><a href="#">Campgrounds</a></li>
+                    <li><a href="#">Picnic Areas</a></li>
+                    <li><a href="#">Food & Lodging</a></li>
+                    <li><a href="#">Climbing Information</a></li>
+                    <li><a href="#">Winter Recreation</a></li>
+                </ul>
+                <h3>Visiting the Park</h3>
+                <ul>
+                    <li><a href="#">Longmire</a></li>
+                    <li><a href="#">Paradise</a></li>
+                    <li><a href="#">Ohanapecosh</a></li>
+                    <li><a href="#">Sunrise</a></li>
+                    <li><a href="#">Mowich Lake</a></li>
+                </ul>
+
+                <h3>Current News</h3>
+                <ul>
+                    <li><a href="#">Weather Forecast</a></li>
+                    <li><a href="#">Road Conditions</a></li>
+                    <li><a href="#">Trail Conditions</a></li>
+                </ul>
+            </aside>
+
+        </div>
+    </div>
+
+    </body>
+</html>
