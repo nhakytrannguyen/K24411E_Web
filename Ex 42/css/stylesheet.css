@@ -1,0 +1,90 @@
+BODY {
+    color: green;
+    background: white url('Draft.jpg') no-repeat fixed center center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+H1, H2, H3, H4, H5, H6 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #b37426; 
+}
+
+ADDRESS {
+    font-size: 0.9em;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+BLOCKQUOTE {
+    background-color: silver;
+    color: green;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+UL {
+    list-style: circle url('../images/Apple.jpg') outside;
+    padding-left: 25px;
+}
+
+UL B {
+    color: rgb(155,0,0);
+}
+
+A {
+    font-size: 0.95em;
+    color: blue;
+    text-decoration: underline;
+}
+
+A:hover {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.Special {
+    color: rgb(153,102,6);
+    font-weight: bold;
+}
+
+DIV.Article {
+    padding: 1em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffcc66; 
+    background-color: rgb(252,221,163); 
+    width: 32%;
+    float: right;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.products {
+    width: 64%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.comments-section {
+    clear: both;
+    padding-top: 20px;
+}
+
+.comment-author {
+    color: green;
+    margin-bottom: 15px;
+}
+
+/* Đường gạch ngang mảnh màu xám */
+hr {
+    border: none;
+    border-top: 1px solid gray;
+    margin: 20px 0;
+    clear: both;
+}
