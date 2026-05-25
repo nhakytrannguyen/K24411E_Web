@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kết quả đăng nhập</title>
+    <style>
+        body {
+            margin: 0; padding: 0; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            background-color: #f5f5f5; font-family: Arial, sans-serif;
+        }
+        .result-container {
+            width: 400px; padding: 30px; border: 1px solid #b7eb8f;
+            background-color: #f6ffed; border-radius: 8px;
+            box-shadow: 8px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <h2 style="color: #52c41a; margin-top: 0;">Đăng nhập thành công!</h2>
+        <hr style="border: 0; border-top: 1px solid #b7eb8f;">
+        <p><strong>Username nhận được:</strong> <span id="display-username" style="color: blue;"></span></p>
+        <p><strong>Password nhận được:</strong> <span id="display-password" style="color: red;"></span></p>
+        <br>
+        <a href="index.html" style="text-decoration: none; color: #1890ff;">← Quay lại trang đăng nhập</a>
+    </div>
+
+    <script>
+        // Hàm dùng để lấy các tham số từ URL
+        // Ví dụ URL là: process_login.html?username=obama&password=123
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Lấy giá trị của tham số 'username' và 'password' dựa theo thuộc tính name của form
+        const usernameReceived = urlParams.get('username');
+        const passwordReceived = urlParams.get('password');
+
+        // Hiển thị lên giao diện
+        document.getElementById('display-username').textContent = usernameReceived ? usernameReceived : "(Trống)";
+        document.getElementById('display-password').textContent = passwordReceived ? passwordReceived : "(Trống)";
+    </script>
+
+</body>
+</html>

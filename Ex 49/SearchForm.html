@@ -1,0 +1,229 @@
+<html>
+<head>
+    <title> Search Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            width: 650px;
+            background-color: #b3ffff; 
+            border: 3px solid #0088cc;
+            padding: 25px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .main-title {
+            color: #ff0000;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .header-line {
+            border: none;
+            border-top: 2px solid #0088cc;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .option-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .option-table td {
+            padding: 4px 0;
+            vertical-align: middle;
+        }
+
+
+        .input-date {
+            width: 130px;
+            padding: 2px;
+            border: 1px solid #7a7a7a;
+        }
+
+        .input-keyword {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #7a7a7a;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+
+        .action-group {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-top: 20px;
+            padding-left: 10px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .icon-btn img {
+            display: block;
+            border: none;
+        }
+
+
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: none; /* Mặc định ẩn */
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup-box {
+            background: white;
+            padding: 25px 40px;
+            border: 1px solid #7a7a7a;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.3);
+            text-align: center;
+            border-radius: 4px;
+            max-width: 400px;
+        }
+
+        .popup-box p {
+            font-size: 15px;
+            color: #000;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .popup-close-btn {
+            display: inline-block;
+            padding: 4px 20px;
+            background-color: #e1e1e1;
+            border: 1px solid #7a7a7a;
+            color: black;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+
+        #search-popup:target, 
+        #help-popup:target {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="main-title">Online Classifieds Search Form</div>
+    <hr class="header-line">
+
+    <form id="classifiedsForm">
+        <div class="section-title">1) Search for a classified in the following sections:</div>
+        <table class="option-table">
+            <tr>
+                <td style="width: 25%;"><label><input type="radio" name="section" value="Employment"> Employment</label></td>
+                <td><label><input type="radio" name="section" value="Personal"> Personal</label></td>
+            </tr>
+            <tr>
+                <td><label><input type="radio" name="section" value="For Sale" checked> For Sale</label></td>
+                <td><label><input type="radio" name="section" value="Miscellaneous"> Miscellaneous</label></td>
+            </tr>
+            <tr>
+                <td><label><input type="radio" name="section" value="Housing"> Housing</label></td>
+                <td><label><input type="radio" name="section" value="All"> All of the above</label></td>
+            </tr>
+        </table>
+
+        <div class="section-title">2) Search the following publications:</div>
+        <table class="option-table">
+            <tr>
+                <td style="width: 35%;"><label><input type="checkbox" name="publication" value="Midwest" checked> Midwest times</label></td>
+                <td style="width: 30%;"><label><input type="checkbox" name="publication" value="Modern"> Modern News</label></td>
+                <td><label><input type="checkbox" name="publication" value="EmploymentToday"> Employment Today</label></td>
+            </tr>
+            <tr>
+                <td><label><input type="checkbox" name="publication" value="GreatLakes" checked> Great Lakes Classifieds</label></td>
+                <td><label><input type="checkbox" name="publication" value="Middleton"> Middleton Daily</label></td>
+                <td><label><input type="checkbox" name="publication" value="Cashtown"> Cashtown Daily News</label></td>
+            </tr>
+        </table>
+
+        <div class="section-title">
+            3) From to 
+            <input type="text" name="fromDate" value="mm/dd/yy" class="input-date"> 
+            to 
+            <input type="text" name="toDate" value="mm/dd/yy" class="input-date">.
+        </div>
+
+        <div class="section-title">4) Enter a few keywords to describe the classified.</div>
+        <input type="text" name="keywords" class="input-keyword">
+
+        <div class="section-title">5) Click one of the options below:</div>
+        
+        <div class="action-group">
+            <a href="#search-popup" class="icon-btn">
+                <img src="images/Search.gif" alt="Search">
+            </a>
+
+            <a href="#help-popup" class="icon-btn">
+                <img src="images/Help.gif" alt="Help">
+            </a>
+
+            <button type="reset" class="icon-btn">
+                <img src="images/Cancel.gif" alt="Cancel">
+            </button>
+        </div>
+    </form>
+</div>
+
+<div id="search-popup" class="popup-overlay">
+    <div class="popup-box">
+        <p>Search simulation successful!</p>
+        <a href="#" class="popup-close-btn">OK</a>
+    </div>
+</div>
+
+<div id="help-popup" class="popup-overlay">
+    <div class="popup-box">
+        <h3 style="margin-top: 0; color: #0033cc;">Help & Instructions</h3>
+        <p style="text-align: left;">
+            1. Select a category you want to look for.<br>
+            2. Check one or more news publications.<br>
+            3. Enter the date range and some keywords to filter the classified ads.<br>
+            4. Click <b>Search</b> to view results or <b>Cancel</b> to clear form data.
+        </p>
+        <a href="#" class="popup-close-btn">OK</a>
+    </div>
+</div>
+
+</body>
+</html>

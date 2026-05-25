@@ -1,0 +1,268 @@
+<html>
+    <head>
+        <title>Register</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .form-container {
+                width: 650px;
+                background-color: #99ccff;
+                border: 3px solid #0044cc;
+                padding: 20px;
+                box-sizing: border-box;
+                position: relative;
+            }
+            .logo-box {
+                width: fit-content;
+                border: 0px;
+                margin: 0 auto 15px auto;
+                line-height: 0;
+            }
+
+            .logo-box img {
+                display: block;
+                max-width: 280px;
+                height: auto;
+            }
+
+            .title-form {
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 24px;
+                font-weight: bold;
+                margin: 5px 0;
+            }
+
+            .subtitle-form {
+                text-align: center;
+                font-size: 13px;
+                margin-bottom: 25px;
+            }
+
+            /* Định dạng bảng chính để căn lề thẳng hàng */
+            .main-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 14px;
+            }
+
+            .main-table td {
+                padding: 6px 5px;
+                vertical-align: middle;
+            }
+
+            /* Độ rộng cột tiêu đề bên trái */
+            .label-left {
+                width: 140px;
+                text-align: left;
+            }
+
+            /* Đường gạch ngang phân chia các phần */
+            .divider {
+                border: none;
+                border-top: 1px solid #555;
+                margin: 10px 0;
+            }
+
+            input[type="text"], select, textarea {
+                border: 1px solid #7a7a7a;
+                padding: 2px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            /* Kích thước chuẩn cho từng nhóm ô nhập liệu */
+            .input-name { width: 150px; }
+            .input-wide { width: 230px; }
+            .input-city { width: 160px; }
+            .input-short { width: 45px; }
+
+            /* Bảng con phục vụ xếp Radio và Checkbox */
+            .sub-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .sub-table td {
+                padding: 2px 0;
+            }
+
+            /* Khu vực chứa 2 nút bấm ở dưới cùng */
+            .button-group {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            /* Định dạng nút bấm giống hình mẫu */
+            .btn {
+                display: inline-block;
+                padding: 3px 12px;
+                margin: 0 5px;
+                cursor: pointer;
+                background-color: #e1e1e1;
+                border: 1px solid #7a7a7a;
+                font-size: 14px;
+                color: black;
+                text-decoration: none;
+                font-family: Arial, sans-serif;
+                box-shadow: 1px 1px 1px #fff inset;
+            }
+
+            /* --- PHẦN TẠO THÔNG BÁO ALERT BẰNG CSS THUẦN --- */
+            .popup-overlay {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+
+            .popup-box {
+                background: white;
+                padding: 20px 40px;
+                border: 1px solid #7a7a7a;
+                box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+                text-align: center;
+                border-radius: 4px;
+            }
+
+            #alert-box:target {
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="form-container">
+        <div class="logo-box">
+            <img src="images/Jackson.gif" alt="Jackson Electronics Logo">
+        </div>
+
+        <div class="title-form">Registration Form</div>
+        <div class="subtitle-form">Register your Jackson Electronics product here</div>
+
+        <form id="registerForm">
+            <table class="main-table">
+                <tr>
+                    <td class="label-left">First Name:</td>
+                    <td>
+                        <input type="text" name="firstName" class="input-name">
+                        &nbsp;&nbsp;&nbsp;&nbsp;Last Name: 
+                        <input type="text" name="lastName" class="input-name">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-left">Address #1:</td>
+                    <td><input type="text" name="address1" class="input-wide"></td>
+                </tr>
+                <tr>
+                    <td class="label-left">Address #2:</td>
+                    <td><input type="text" name="address2" class="input-wide"></td>
+                </tr>
+                <tr>
+                    <td class="label-left">City:</td>
+                    <td>
+                        <input type="text" name="city" class="input-city">
+                        &nbsp;State: <input type="text" name="state" class="input-short">
+                        &nbsp;Zip: <input type="text" name="zip" class="input-short">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-left">Country:</td>
+                    <td><input type="text" name="country" value="United States" class="input-wide"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><hr class="divider"></td>
+                </tr>
+
+                <tr>
+                    <td class="label-left">Product:</td>
+                    <td>
+                        <select name="product" style="width: 140px;">
+                            <option value="ScanMaster">ScanMaster</option>
+                            <option value="PrinterPro">PrinterPro</option>
+                            <option value="LaserJet">LaserJet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-left">Date Purchased:</td>
+                    <td><input type="text" name="datePurchased" class="input-wide"></td>
+                </tr>
+                <tr>
+                    <td class="label-left">Serial #:</td>
+                    <td><input type="text" name="serialNum" class="input-wide"></td>
+                </tr>
+
+                <tr>
+                    <td class="label-left" style="vertical-align: top; padding-top: 6px;">Used for:</td>
+                    <td>
+                        <table class="sub-table">
+                            <tr>
+                                <td style="width: 45%;"><label><input type="radio" name="usedFor" value="Home"> Home</label></td>
+                                <td><label><input type="radio" name="usedFor" value="Educational"> Educational Institution</label></td>
+                            </tr>
+                            <tr>
+                                <td><label><input type="radio" name="usedFor" value="Business" checked> Business</label></td>
+                                <td><label><input type="radio" name="usedFor" value="Other"> Other</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><label><input type="radio" name="usedFor" value="Government"> Government</label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label-left" style="vertical-align: top; padding-top: 6px;">System (check all that apply):</td>
+                    <td>
+                        <table class="sub-table">
+                            <tr>
+                                <td style="width: 45%;"><label><input type="checkbox" name="system" value="Windows"> Windows</label></td>
+                                <td><label><input type="checkbox" name="system" value="UNIX"> UNIX</label></td>
+                            </tr>
+                            <tr>
+                                <td><label><input type="checkbox" name="system" value="Macintosh"> Macintosh</label></td>
+                                <td><label><input type="checkbox" name="system" value="Other"> Other</label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><hr class="divider"></td>
+                </tr>
+
+                <tr>
+                    <td class="label-left" style="vertical-align: top; padding-top: 6px;">Comments?:</td>
+                    <td>
+                        <textarea name="comments" rows="5" style="width: 100%; max-width: 430px; resize: none;"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="button-group">
+                <a href="#alert-box" class="btn">Click to register</a>
+                <input type="reset" value="Click to cancel" class="btn">
+            </div>
+        </form>
+    </div>
+    <div id="alert-box" class="popup-overlay">
+        <div class="popup-box">
+            <p style="font-size: 16px; margin-bottom: 20px; color: black;">Registration successful!</p>
+            <a href="#" class="btn" style="padding: 4px 20px;">OK</a>
+        </div>
+    </div>
+    </body>
+</html>
