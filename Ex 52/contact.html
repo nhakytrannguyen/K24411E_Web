@@ -3,29 +3,7 @@
         <title>Contact Form</title>
         <style>
             body {
-                background-color: white;
                 font-family: Arial;
-                margin: 20px;
-            }
-            .form-container {
-                width: 550px;
-                margin: 0 auto;
-                background-color: white;
-                border: 1px solid grey;
-                padding: 15px;
-            }
-            .title-form {
-                font-size: 18px;
-                font-weight: bold;
-                margin-bottom: 15px;
-            }
-            .main-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            .main-table td {
-                padding: 5px;
-                vertical-align: top;
             }
             input[type="text"], select, textarea {
                 width: 100%;
@@ -33,61 +11,57 @@
                 padding: 4px;
                 box-sizing: border-box;
             }
-            .btn-send {
-                background-color: #b12b4b;
-                color: white;
-                border: none;
-                padding: 6px 18px;
-                font-weight: bold;
-                cursor: pointer;
-            }
         </style>
     </head>
-    <body>
-        <div class="form-container">
-            <div class="title-form">Contact the editorial office</div>
-            <form action="result.html" method="get" name="contactForm">
-                <table class="main-table">
-                    <tr>
-                        <td colspan="2">
-                            Full name<br>
-                            <input type="text" name="fullname">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="width: 50%;">
-                            Email<br>
-                            <input type="text" name="email">
-                            <br><br>
-                            Title<br>
-                            <input type="text" name="title">
-                        </td>
-                        <td style="width: 50%;">
-                            Send to<br>
-                            <select name="sendTo" size="6">
-                                <option value="Editorial board" selected>Editorial board</option>
-                                <option value="News Department">News Department</option>
-                                <option value="Board of Perspectives">Board of Perspectives</option>
-                                <option value="World Board">World Board</option>
-                                <option value="Business Department">Business Department</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            Content<br>
-                            <textarea name="content" rows="8" style="resize: none;"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="padding-top: 10px;">
-                            <input type="submit" value="Send" class="btn-send">
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
-
+    <body bgcolor="white">
+        <table border="1" bordercolor="#ccc" bgcolor="white" width="550" align="center" cellpadding="15" cellspacing="0">
+            <tr>
+                <td>
+                    <p style="font-size: 18px; font-weight: bold; margin-top: 0; margin-bottom: 15px;">
+                        Contact the editorial office
+                    </p>
+                    <form action="result.html" method="get" name="contactForm">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tr>
+                                <td colspan="2">
+                                    Full name<br>
+                                    <input type="text" name="fullname">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="50%" valign="top">
+                                    Email<br>
+                                    <input type="text" name="email">
+                                    <br><br>
+                                    Title<br>
+                                    <input type="text" name="title">
+                                </td>
+                                <td width="50%" valign="top">
+                                    Send to<br>
+                                    <select name="sendTo" size="6">
+                                        <option value="Editorial board" selected>Editorial board</option>
+                                        <option value="News Department">News Department</option>
+                                        <option value="Board of Perspectives">Board of Perspectives</option>
+                                        <option value="World Board">World Board</option>
+                                        <option value="Business Department">Business Department</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" valign="top">
+                                    Content<br>
+                                    <textarea name="content" rows="8" style="resize: none;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding-top: 15px;">
+                                    <input type="submit" value="Send" style="background-color: #b12b4b; color: white; border: none; padding: 6px 18px; font-weight: bold; cursor: pointer;">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
