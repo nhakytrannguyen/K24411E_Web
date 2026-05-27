@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Newborn Registration</title>
+        <style>
+            body {
+                background-color: white;
+                font-family: 'Times New Roman';
+                margin: 20px;
+                color: white;
+            }
+            .form-container {
+                width: 600px;
+                margin: 0 auto;
+                background-color: #008b8b; 
+                border: 3px solid blue;    
+                padding: 20px;
+                color: white;            
+            }
+
+            .logo-box {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .logo-box img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .title-form {
+                font-family: 'Arial';
+                text-align: center;
+                font-size: 26px;
+                font-weight: bold;
+                margin-bottom: 20px;
+
+            }
+            .main-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .main-table td {
+                padding: 6px 2px;
+                vertical-align: middle;
+            }
+            input[type="text"], select {
+            border: 1px solid grey;
+            padding: 2px;
+            background-color: white;
+            color: black; 
+            }
+            .button-group {
+                text-align: center;
+                margin-top: 15px;
+            }
+            .btn {
+                padding: 3px 10px;
+                margin: 0 5px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <div class="logo-box">
+                <img src="images/Logo.gif">
+            </div>
+
+            <div class="title-form">Newborn Registration</div>
+
+            <form name="registerForm">
+                <table class="main-table">
+                    <tr>
+                        <td colspan="2">
+                            Date: <input type="text" name="regDate" placeholder="mm/dd/yy" style="width: 100px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            1) Infant's first name: <input type="text" name="infantFirst" style="width: 140px;">
+                            &nbsp;&nbsp;Last: <input type="text" name="infantLast" style="width: 160px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            2) Medical Record #: <input type="text" name="medicalRecord" style="width: 100px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            3) Date of birth: <input type="text" name="dob" placeholder="mm/dd/yy" style="width: 100px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            4) Birth weight: <input type="text" name="weight" style="width: 80px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            5) APGAR score: <input type="text" name="apgar" style="width: 60px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            6) Mother's first name: <input type="text" name="motherFirst" style="width: 140px;">
+                            &nbsp;&nbsp;Last: <input type="text" name="motherLast" style="width: 160px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            7) Father's first name: <input type="text" name="fatherFirst" style="width: 140px;">
+                            &nbsp;&nbsp;Last: <input type="text" name="fatherLast" style="width: 160px;">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="width: 180px; vertical-align: top; padding-top: 8px;">
+                            8) Physician (check all that apply):
+                        </td>
+                        <td>
+                            <select name="physician" size="4" multiple style="width: 150px;">
+                                <option value="Albert">Dr. Warren Albert</option>
+                                <option value="Alvarez">Dr. Maria Alvarez</option>
+                                <option value="Brinkman">Dr. Karen Brinkman</option>
+                                <option value="Kerry">Dr. Micheal Kerry</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="button-group">
+                    <input type="submit" value="Register" class="btn" onclick="alert('Registration successful!');">
+                    <input type="reset" value="Cancel" class="btn">
+                </div>
+            </form>
+
+        </div>
+
+    </body>
+</html>
