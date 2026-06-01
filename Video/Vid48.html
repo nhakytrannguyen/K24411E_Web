@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Tiêu đề trang</title>
+        <script src="js/mainjs.js"></script> 
+        
+        <script type="text/javascript">
+            function xuly(a, b, pt)
+            {
+                kq = thuchienpheptoan(eval(a), eval(b), pt);
+                document.getElementById("ketqua").innerText = kq;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td>Hệ số a:</td>
+                    <td><input type="text" id="hsa" name="hsa"></td>
+                </tr>
+                <tr>
+                    <td>Hệ số b:</td>
+                    <td><input type="text" id="hsb" name="hsb"></td>
+                </tr>
+                <tr>
+                    <td>Kết quả:</td>
+                    <td id="ketqua"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="Cộng" onclick="xuly(document.getElementById('hsa').value, document.getElementById('hsb').value, '+')">
+                        <input type="button" value="Trừ" onclick="xuly(document.getElementById('hsa').value, document.getElementById('hsb').value, '-')">
+                        <input type="button" value="Nhân" onclick="xuly(document.getElementById('hsa').value, document.getElementById('hsb').value, '*')">
+                        <input type="button" value="Chia" onclick="xuly(document.getElementById('hsa').value, document.getElementById('hsb').value, '/')">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

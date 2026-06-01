@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Tính điểm GPA</title>
+    <script>
+        function changeCourse() {
+            var course = myform.select_course.value;
+            
+            row_qt.style.display = "none";
+            row_gk.style.display = "none";
+            row_gk1.style.display = "none";
+            row_gk2.style.display = "none";
+            row_ck.style.display = "none";
+            
+            if (course == "course1") {
+                row_qt.style.display = "";
+                row_gk.style.display = ""; 
+                row_ck.style.display = "";
+                
+                lbl_qt.innerText = "Quá trình (20%):";
+                lbl_gk.innerText = "Giữa kì (30%):";
+                lbl_ck.innerText = "Cuối kì (50%):";
+            } 
+            else if (course == "course2") {
+                row_qt.style.display = "";
+                row_gk1.style.display = ""; 
+                row_gk2.style.display = "";  
+                row_ck.style.display = "";
+                
+                lbl_qt.innerText = "Quá trình (15%):";
+                lbl_gk1.innerText = "Giữa kì 1 (20%):";
+                lbl_gk2.innerText = "Giữa kì 2 (15%):";
+                lbl_ck.innerText = "Cuối kì (50%):";
+            } 
+            else if (course == "course3") {
+                row_qt.style.display = "";
+                row_gk.style.display = ""; 
+                row_ck.style.display = "";
+                
+                lbl_qt.innerText = "Quá trình (25%):";
+                lbl_gk.innerText = "Giữa kì (25%):";
+                lbl_ck.innerText = "Cuối kì (50%):";
+            }
+        }
+
+        function calcGPA() {
+            var course = myform.select_course.value;
+            var gpa = 0;
+
+            if (course == "") {
+                alert("Vui lòng chọn môn học (Course) trước!");
+                return;
+            }
+
+            var qt = eval(myform.input_qt.value);
+            var gk = eval(myform.input_gk.value);
+            var gk1 = eval(myform.input_gk1.value);
+            var gk2 = eval(myform.input_gk2.value);
+            var ck = eval(myform.input_ck.value);
+
+            if (course == "course1") {
+                gpa = (qt * 0.2) + (gk * 0.3) + (ck * 0.5);
+            } 
+            else if (course == "course2") {
+                gpa = (qt * 0.15) + (gk1 * 0.2) + (gk2 * 0.15) + (ck * 0.5);
+            } 
+            else if (course == "course3") {
+                gpa = (qt * 0.25) + (gk * 0.25) + (ck * 0.5);
+            }
+
+            myform.input_result.value = gpa;
+        }
+    </script>
+</head>
+<body> 
+    <form name="myform">
+        <table>
+            <tr>
+                <td>Chọn khóa học:</td>
+                <td>
+                    <select id="select_course" name="select_course" onchange="changeCourse()">
+                        <option value=""> Select Course </option>
+                        <option value="course1">Course 1</option>
+                        <option value="course2">Course 2</option>
+                        <option value="course3">Course 3</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr id="row_qt" style="display: none;">
+                <td id="lbl_qt">Quá trình:</td>
+                <td><input type="text" id="input_qt" name="input_qt" value="0"></td>
+            </tr>
+            
+            <tr id="row_gk" style="display: none;">
+                <td id="lbl_gk">Giữa kì:</td>
+                <td><input type="text" id="input_gk" name="input_gk" value="0"></td>
+            </tr>
+            
+            <tr id="row_gk1" style="display: none;">
+                <td id="lbl_gk1">Giữa kì 1:</td>
+                <td><input type="text" id="input_gk1" name="input_gk1" value="0"></td>
+            </tr>
+            
+            <tr id="row_gk2" style="display: none;">
+                <td id="lbl_gk2">Giữa kì 2:</td>
+                <td><input type="text" id="input_gk2" name="input_gk2" value="0"></td>
+            </tr>
+            
+            <tr id="row_ck" style="display: none;">
+                <td id="lbl_ck">Cuối kì:</td>
+                <td><input type="text" id="input_ck" name="input_ck" value="0"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" onclick="calcGPA()" value="Calc GPA" style="padding: 5px 20px;">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Result:</td>
+                <td><input type="text" id="input_result" name="input_result" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
