@@ -2,6 +2,7 @@
     <head> 
         <title>Bài tập tính toán Math</title> 
         <script type="text/javascript">
+            //tinh max
             function tinhMax() {
                 var a = eval(document.getElementById("hsa").value);
                 var b = eval(document.getElementById("hsb").value);
@@ -17,6 +18,7 @@
                 }
                 document.getElementById("Result").value = max;
             }
+            //min
             function tinhMin() {
                 var a = eval(document.getElementById("hsa").value);
                 var b = eval(document.getElementById("hsb").value);
@@ -33,19 +35,19 @@
                 }
                 document.getElementById("Result").value = min;
             }
-
+            //sin
             function tinhSin() {
                 var a = eval(document.getElementById("hsa").value);
                 var ketqua = Math.sin(a); 
                 document.getElementById("Result").value = ketqua;
             }
-
+            //cos
             function tinhCos() {
                 var a = eval(document.getElementById("hsa").value);
                 var ketqua = Math.cos(a);
                 document.getElementById("Result").value = ketqua;
             }
-
+            //luythua
             function tinhLuyThua() {
                 var a = eval(document.getElementById("hsa").value);
                 var b = eval(document.getElementById("hsb").value);
@@ -55,7 +57,7 @@
         </script>
     </head>
     <body>
-        <table border="1" cellpadding="5" cellspacing="0">
+        <table border="1">
             <tr>
                 <td align="center"><b>a:</b></td>
                 <td><input type="text" id="hsa"></td>
