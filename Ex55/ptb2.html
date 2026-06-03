@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>PT bậc 2</title>
+        <script type="text/javascript">
+            function giaiBacNhat(b, c) 
+            {
+                var result = "";
+                if (b == 0)
+                {
+                    if (c == 0)
+                        result = "Infinite solutions";
+                    else
+                        result = "No solution";
+                }
+                else
+                {
+                    result = "x = " + (-c / b);
+                }
+                return result;
+            }
+            function giaiBacHai() 
+            {
+                var a = eval(myform.input_a.value);
+                var b = eval(myform.input_b.value);
+                var c = eval(myform.input_c.value);
+                var result = "";
+                
+                if (a == 0) 
+                {
+                    result = giaiBacNhat(b, c);
+                } 
+                else 
+                {
+                    var delta = b * b - 4 * a * c;
+
+                    if (delta < 0) 
+                    {
+                        result = "No solution";
+                    } 
+                    else if (delta == 0) 
+                    {
+                        var x = -b / (2 * a);
+                        result = "x1 = x2 = " + x;
+                    } 
+                    else 
+                    {
+                        var x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                        var x2 = (-b + Math.sqrt(delta)) / (2 * a);
+                        result = "x1=" + x1 + " ; x2=" + x2;
+                    }
+                }
+                myform.input_result.value = result;
+                td_result.innerHTML = "<font color='red'>" + result + "</font>";
+            }
+            function clearFields() 
+            {
+                myform.input_a.value = "";
+                myform.input_b.value = "";
+                myform.input_c.value = "";
+                myform.input_result.value = "";
+                td_result.innerHTML = "";
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="1">
+                <tr>
+                    <th colspan="2" bgcolor="lightgreen" align="center">The quadratic equation</th>
+                </tr>
+                <tr>
+                    <td>a:</td>
+                    <td><input type="text" id="input_a" name="input_a"></td>
+                </tr>
+                <tr>
+                    <td>b:</td>
+                    <td><input type="text" id="input_b" name="input_b"></td>
+                </tr>
+                <tr>
+                    <td>c:</td>
+                    <td><input type="text" id="input_c" name="input_c"></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td>
+                        <input type="text" id="input_result" name="input_result" size="30" readonly style="font-weight: bold;">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" onclick="giaiBacHai()" value="Find solution">
+                        <input type="button" onclick="clearFields()" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

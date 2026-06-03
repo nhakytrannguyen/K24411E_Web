@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Exercise 57</title>
+        <script type="text/javascript">
+            function TongCong() 
+            {
+                var qty1 = eval(document.getElementById("qty_mouse").value);
+                var qty2 = eval(document.getElementById("qty_keyboard").value);
+                var qty3 = eval(document.getElementById("qty_usb").value);
+
+                var item1 = 19.95 * qty1;
+                document.getElementById("item_mouse").value = item1;
+
+                var item2 = 29.95 * qty2;
+                document.getElementById("item_keyboard").value = item2;
+
+                var item3 = 39.95 * qty3;
+                document.getElementById("item_usb").value = item3;
+
+                var tongCong = item1 + item2 + item3;
+                document.getElementById("total_amount").value = tongCong;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="0">
+                <tr align="left" style="font-weight: bold;">
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item table</th>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td>19.95$</td>
+                    <td><input type="text" id="qty_mouse"></td>
+                    <td><input type="text" id="item_mouse" readonly></td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td>29.95$</td>
+                    <td><input type="text" id="qty_keyboard"></td>
+                    <td><input type="text" id="item_keyboard" readonly></td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td>39.95$</td>
+                    <td><input type="text" id="qty_usb"></td>
+                    <td><input type="text" id="item_usb" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="5"><hr></td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="right"><b>Total:</b></td>
+                    <td><input type="text" id="total_amount" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="right">
+                        <input type="button" value="Sum" onclick="TongCong()" style="background-color: rgb(255, 219, 91); color: black; font-weight: bold;">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

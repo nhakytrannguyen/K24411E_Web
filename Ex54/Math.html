@@ -1,0 +1,86 @@
+<html> 
+    <head> 
+        <title>Bài tập tính toán Math</title> 
+        <script type="text/javascript">
+            function tinhMax() {
+                var a = eval(document.getElementById("hsa").value);
+                var b = eval(document.getElementById("hsb").value);
+                var c = eval(document.getElementById("hsc").value);
+                var max = a;
+                if (b > max) 
+                {
+                    max = b;
+                }
+                if (c > max) 
+                {
+                    max = c;
+                }
+                document.getElementById("Result").value = max;
+            }
+            function tinhMin() {
+                var a = eval(document.getElementById("hsa").value);
+                var b = eval(document.getElementById("hsb").value);
+                var c = eval(document.getElementById("hsc").value);
+                
+                var min = a;
+                if (b < min) 
+                {
+                    min = b;
+                }
+                if (c < min) 
+                {
+                    min = c;
+                }
+                document.getElementById("Result").value = min;
+            }
+
+            function tinhSin() {
+                var a = eval(document.getElementById("hsa").value);
+                var ketqua = Math.sin(a); 
+                document.getElementById("Result").value = ketqua;
+            }
+
+            function tinhCos() {
+                var a = eval(document.getElementById("hsa").value);
+                var ketqua = Math.cos(a);
+                document.getElementById("Result").value = ketqua;
+            }
+
+            function tinhLuyThua() {
+                var a = eval(document.getElementById("hsa").value);
+                var b = eval(document.getElementById("hsb").value);
+                var ketqua = Math.pow(a, b);
+                document.getElementById("Result").value = ketqua;
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <td align="center"><b>a:</b></td>
+                <td><input type="text" id="hsa"></td>
+            </tr>
+            <tr>
+                <td align="center"><b>b:</b></td>
+                <td><input type="text" id="hsb"></td>
+            </tr>
+            <tr>
+                <td align="center"><b>c:</b></td>
+                <td><input type="text" id="hsc"></td>
+            </tr>
+            <tr>
+                <td align="center"><b>Result:</b></td>
+                <td><input type="text" id="Result" size="30" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="MAX" onclick="tinhMax()">
+                    <input type="button" value="MIN" onclick="tinhMin()">
+                    <input type="button" value="sin(a)" onclick="tinhSin()">
+                    <input type="button" value="Cos(a)" onclick="tinhCos()">
+                    <input type="button" value="a^b" onclick="tinhLuyThua()">
+                </td>
+            </tr>
+        </table>
+    </body> 
+</html>
