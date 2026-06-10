@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Member Registration</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h2>Member Registration</h2>
+            <form id="regForm">
+                <div class="form-group">
+                    <label>Name(*)</label>
+                    <input type="text" id="txtName">
+                </div>
+                
+                <div class="form-group">
+                    <label>Birthday(*)</label>
+                    Day: <select id="selDay"></select>
+                    Month: <select id="selMonth"></select>
+                    Year: <select id="selYear"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender(*)</label>
+                    <input type="radio" name="gender" value="Man" checked id="rdMan"> <label style="width:auto;" for="rdMan">Man</label>
+                    <input type="radio" name="gender" value="Woman" id="rdWoman"> <label style="width:auto;" for="rdWoman">Woman</label>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email(*)</label>
+                    <input type="text" id="txtEmail">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label style="width:100%;">Your favorite:</label>
+                    <div class="hobbies-group">
+                        <input type="checkbox" name="hobby" value="Shopping" id="chk1"> <label style="width:auto;" for="chk1">Shopping</label><br>
+                        <input type="checkbox" name="hobby" value="Tourism" id="chk2"> <label style="width:auto;" for="chk2">Tourism</label><br>
+                        <input type="checkbox" name="hobby" value="Chat" id="chk3"> <label style="width:auto;" for="chk3">Chat</label><br>
+                        <input type="checkbox" name="hobby" value="Read a book" id="chk4"> <label style="width:auto;" for="chk4">Read a book</label><br>
+                        <input type="checkbox" name="hobby" value="Listening to music" id="chk5"> <label style="width:auto;" for="chk5">Listening to music</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label style="width:100%;">Your favorite color:</label>
+                    <div class="colors-group">
+                        <input type="radio" name="favColor" value="Blue" id="cBlue" checked> <span class="color-label color-blue">Blue</span><br>
+                        <input type="radio" name="favColor" value="Red" id="cRed"> <span class="color-label color-red">Red</span><br>
+                        <input type="radio" name="favColor" value="Yellow" id="cYellow"> <span class="color-label color-yellow">Yellow</span><br>
+                        <input type="radio" name="favColor" value="Green" id="cGreen"> <span class="color-label color-green">Green</span><br>
+                        <input type="radio" name="favColor" value="Violet" id="cViolet"> <span class="color-label color-violet">Violet</span>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button type="button" id="btnSignUp">Sign up</button>
+                    <button type="button" id="btnReset">Reset</button>
+                </div>
+            </form>
+            
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Birthday</th>
+                        <th>Hobbies</th>
+                        <th>Colors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

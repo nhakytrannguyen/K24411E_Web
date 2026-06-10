@@ -1,0 +1,45 @@
+
+<html>
+    <head>
+        <title>Dynamic List</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="control-panel">
+                <div class="btn-group">
+                    <button type="button" id="btnAdd">Add Node</button>
+                    <button type="button" id="btnRemove">Remove Node</button>
+                    <button type="button" id="btnModify">Modify Node</button>
+                </div>
+                <div class="input-group">
+                    <div class="row">
+                        <span class="label-text">Content</span>
+                        <input type="text" id="txtContent">
+                        <span class="label-pos">Position</span>
+                        <input type="text" id="txtAddPos" class="small-input">
+                    </div>
+                    <div class="row" style="margin-top: 35px;">
+                        <span class="label-text">New Content</span>
+                        <input type="text" id="txtNewContent">
+                        <span class="label-pos">Position</span>
+                        <input type="text" id="txtModifyPos" class="small-input">
+                    </div>
+                    <div class="row" style="margin-top: -55px; margin-left: 215px; position: absolute;">
+                        <span class="label-pos">Position</span>
+                        <input type="text" id="txtRemovePos" class="small-input">
+                    </div>
+                </div>
+            </div>
+            <div class="list-panel">
+                <h3>Web Node</h3>
+                <ul id="webList">
+                    <li>Data base</li>
+                    <li>Web1</li>
+                    <li>Web2</li>
+                </ul>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>

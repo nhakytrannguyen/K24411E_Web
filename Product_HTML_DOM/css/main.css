@@ -1,0 +1,21 @@
+table, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse; /* Thêm cái này cho bảng nhìn gọn gàng hơn */
+    padding: 8px;
+}
+tbody tr:hover {
+    background-color: yellow;
+}
+td img {
+    cursor: pointer;
+}
+
+/* Thêm style cho tên sản phẩm để người dùng biết có thể click */
+.product-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.product-link:hover {
+    color: red;
+}

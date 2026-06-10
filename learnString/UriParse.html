@@ -1,0 +1,63 @@
+<html> 
+    <head> 
+        <title>Tiêu đề trang</title> 
+    </head>
+    <body>
+        <form name="myform">
+            <p>URI:</p>
+            <input type="text" name="url" id="url" maxlength="200" size="100"
+            value="https://www.example.com:8000/search?id=id123&name=John">
+            
+            <button type="button" onclick="getURLInfo()">Get Infor</button>
+            
+            <p>Protocol: <span id="protocol"></span></p>
+            <p>Host: <span id="host"></span> </p>
+            <p>Port: <span id="port"></span> </p>
+            <p>Id: <span id="query-id"></span> </p>
+            <p>Name: <span id="query-name"></span> </p>
+        </form>
+
+        <script>
+            function getURLInfo() {
+                var url = document.getElementById("url").value;
+                var vịTríDấuHaiChấm = url.indexOf("://"); 
+                // Cắt từ đầu chuỗi (0) đến trước dấu "://"
+                var protocol = url.substring(0, vịTríDấuHaiChấm); 
+                document.getElementById("protocol").innerHTML = protocol;
+
+                // 2. Tìm vị trí dấu ":" của Port và dấu "/" ngay sau Port
+                // Ta tìm từ vị trí sau "://" để không bị lẫn dấu ":" của protocol
+                var vịTríPort = url.indexOf(":", vịTríDấuHaiChấm + 3); 
+                var vịTríGạchChéo = url.indexOf("/", vịTríDấuHaiChấm + 3);
+
+                // Cắt Host: từ sau "://" đến trước dấu ":" của port
+                var host = url.substring(vịTríDấuHaiChấm + 3, vịTríPort);
+                document.getElementById("host").innerHTML = host;
+
+                // Cắt Port: từ sau dấu ":" đến trước dấu "/"
+                var port = url.substring(vịTríPort + 1, vịTríGạchChéo);
+                document.getElementById("port").innerHTML = port;
+
+                // 3. Tách chuỗi bằng split để lấy ID và Name
+                // Cắt lấy đoạn đuôi sau dấu "?" bằng substring
+                var vịTríHỏiChấm = url.indexOf("?");
+                var đoạnĐuôi = url.substring(vịTríHỏiChấm + 1); // "id=id123&name=John"
+
+                // Dùng split tách đôi bằng dấu "&"
+                var mảngQuery = đoạnĐuôi.split("&"); // ["id=id123", "name=John"]
+
+                // Tách tiếp để lấy giá trị id
+                var mảngId = mảngQuery[0].split("="); // ["id", "id123"]
+                var idValue = mảngId[1]; // lấy phần tử thứ 2
+
+                // Tách tiếp để lấy giá trị name
+                var mảngName = mảngQuery[1].split("="); // ["name", "John"]
+                var nameValue = mảngName[1]; // lấy phần tử thứ 2
+
+                // Hiển thị kết quả ra màn hình
+                document.getElementById("query-id").innerHTML = idValue;
+                document.getElementById("querry-name").innerHTML = nameValue;
+            }
+        </script>
+    </body> 
+</html>
