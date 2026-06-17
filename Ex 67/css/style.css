@@ -1,0 +1,43 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #000000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.tieu-de-vang {
+    background-color: #ffeb3b;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.tieu-de-xanh-nhat {
+    background-color: #c8e6c9;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.dong-vang {
+    background-color: yellow;
+}
+
+.dong-trang {
+    background-color: white;
+}

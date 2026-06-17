@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Ex67 detail</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <td colspan="2" class="tieu-de-xanh-nhat">Student Information</td>
+            </tr>
+            <tr>
+                <td style="width: 25%; background-color: white;">Student ID</td>
+                <td id="detId"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white;">Full Name</td>
+                <td id="detName"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white;">Date of Birth</td>
+                <td id="detBirthday"></td>
+            </tr>
+            <tr>
+                <td style="background-color: white">Gender</td>
+                <td id="detGender"></td>
+            </tr>
+        </table>
+        
+        <br>
+        <button onclick="window.history.back()">Back to List</button>
+
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            document.getElementById("detId").innerText = urlParams.get("id");
+            document.getElementById("detName").innerText = urlParams.get("name");
+            document.getElementById("detBirthday").innerText = urlParams.get("birthday");
+            document.getElementById("detGender").innerText = urlParams.get("gender");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Ex 69</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td><b>Title:</b></td>
+                    <td colspan="2" id="oChonMoRong" onclick="resetBoLoc()">
+                        <select id="chonTitle" onchange="locNhanVien()">
+                            <option value="All">All</option>
+                            <option value="Architect">Architect</option>
+                            <option value="Engineer">Engineer</option>
+                            <option value="Teacher">Teacher</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="tieu-de-cot">
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="bangNhanVien">
+                </tbody>
+        </table>
+        <script src="js/script.js"></script>
+    </body>
+</html>
